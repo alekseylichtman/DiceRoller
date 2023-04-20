@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    val rollButton: Button = findViewById(R.id.rollButton)
+    val resultTextView: TextView = findViewById(R.id.resultTextView)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val rollButton: Button = findViewById(R.id.rollButton)
-        val resultTextView: TextView = findViewById(R.id.resultTextView)
 
         rollButton.setOnClickListener {
             val toast = Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT)
@@ -21,9 +21,7 @@ class MainActivity : AppCompatActivity() {
             resultTextView.text = roll().toString()
         }
     }
-
-    override fun on
-
+    
     fun roll(sides: Int = 6): Int {
         return (1..sides).random()
     }
